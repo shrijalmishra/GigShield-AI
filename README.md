@@ -85,6 +85,75 @@ Payout is triggered only if:
 
 ---
 
+## Adversarial Defense & Anti-Spoofing Strategy
+
+To address advanced fraud scenarios such as GPS spoofing and coordinated fake claims, our system introduces a multi-layered AI-based defense mechanism.
+
+### 1. Differentiation: Real vs Fake Worker
+
+Our system does not rely only on GPS location. Instead, it analyzes behavior and activity patterns:
+
+* **Movement Pattern Analysis**
+  Real delivery partners show continuous movement, stops, and realistic travel speeds. Fake users often show static or unnatural movement patterns.
+
+* **Order Activity Verification**
+  The system checks whether the worker is actively accepting or completing deliveries during the disruption.
+
+* **Consistency Check**
+  Compares expected work behavior with actual activity to identify anomalies.
+
+---
+
+### 2. Multi-Source Data Validation
+
+To detect spoofing, the system uses multiple data points beyond GPS:
+
+* Device motion data (accelerometer patterns)
+* Network consistency (sudden jumps in location)
+* Historical work patterns
+* Delivery activity logs (simulated)
+* Area-level validation (are nearby workers also affected?)
+
+This ensures strong validation and reduces fake claims.
+
+---
+
+### 3. Fraud Ring Detection
+
+Our system identifies coordinated fraud attempts by:
+
+* Detecting unusual spikes in claims from the same area
+* Identifying similar behavior patterns across multiple users
+* Flagging synchronized claim attempts
+
+---
+
+### 4. UX Balance (Protecting Honest Workers)
+
+To avoid unfair rejection of genuine claims:
+
+* Claims are **flagged, not immediately rejected**
+* Partial payouts can be provided instantly
+* Final verification happens in the background
+* Users receive clear notifications
+
+---
+
+### 5. AI-Based Risk Scoring
+
+Each claim is assigned a fraud risk score:
+
+* **Low Risk** → Instant payout
+* **Medium Risk** → Partial payout + verification
+* **High Risk** → Flagged for review
+
+---
+
+### Conclusion
+
+By combining behavioral analysis, multi-source data validation, and AI-driven risk scoring, our system effectively prevents large-scale fraud while ensuring fair treatment of genuine workers.
+
+
 ## Tech Stack
 
 Frontend: React.js
