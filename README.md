@@ -5,6 +5,15 @@
 Delivery partners in India (Zomato, Swiggy, etc.) face income loss due to external disruptions like heavy rain, extreme heat, pollution, and curfews. These events reduce working hours and lead to 20–30% loss of income. Currently, there is no proper income protection system for them.
 
 ---
+## Market Crash Scenario
+
+A recent simulated attack revealed that a group of delivery partners exploited insurance systems using GPS spoofing. By faking their location in high-risk zones, they triggered false payouts without actually working, draining the system’s funds.
+
+This highlights a critical challenge:
+Simple GPS-based validation is not sufficient.
+
+Our solution addresses this by introducing advanced anti-spoofing and multi-layer validation techniques.
+
 
 ## Persona & Scenario
 
@@ -67,12 +76,28 @@ Payout is triggered only if:
 
 ---
 
-## AI/ML Integration
+## AI/ML Approach
 
-* Predict expected income using past data
-* Calculate dynamic weekly premium
-* Detect fraud (GPS spoofing, fake claims)
-* Predict future disruptions
+Instead of complex machine learning models, our system uses a rule-based and data-driven approach to simulate AI behavior:
+
+* **Income Prediction (Simple Logic)**
+  Expected income is calculated using the average of past earnings (last 7 days).
+
+* **Dynamic Premium Calculation**
+  Premium is adjusted based on risk factors such as weather conditions and location.
+
+* **Fraud Detection (Logic-Based)**
+  Detects anomalies using:
+
+  * Sudden location jumps
+  * No movement patterns
+  * No delivery activity
+
+* **Risk Scoring System**
+  Each claim is assigned a score based on multiple factors to decide payout level.
+
+This approach ensures simplicity, efficiency, and feasibility for initial implementation.
+
 
 ---
 
@@ -158,10 +183,10 @@ By combining behavioral analysis, multi-source data validation, and AI-driven ri
 
 Frontend: React.js
 Backend: Node.js
-AI/ML: Python
-Database: MongoDB
+Database: Supabase
 APIs: Weather API, Maps API
 Payments: Razorpay (test mode)
+AI Logic: Rule-based predictive system (simulated AI)
 
 ---
 
@@ -184,19 +209,19 @@ We chose a mobile-first platform because delivery partners primarily use smartph
 
 To ensure the platform is accessible to all gig workers, including those with limited financial capacity, we introduce the following:
 
-Micro-Premium Model
+*Micro-Premium Model
 Users can pay small daily amounts (e.g., ₹5/day) instead of a full weekly payment.
 
-Freemium Onboarding
+*Freemium Onboarding
 New users receive a 1-week free trial to understand the benefits of the platform.
 
-Platform Partnership Support
+*Platform Partnership Support
 Collaboration with platforms like Swiggy/Zomato to subsidize or partially cover premiums for workers.
 
-Pay-Later Coverage Option
+*Pay-Later Coverage Option
 Users can activate coverage even with low balance, and the premium can be deducted later from earnings.
 
-Loyalty Rewards System
+*Loyalty Rewards System
 Users with fewer claims receive discounts or bonus coverage in future weeks.
 
 ---
@@ -211,4 +236,4 @@ Phase 3: Advanced features and optimization
 ## Conclusion
 
 GigShield AI+ provides a fair, accurate, and automated way to protect gig workers from income loss using AI and parametric insurance.
-# GigShield-AI
+
